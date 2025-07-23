@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administracion</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mensajes Recibidos</h1>
+    <a href="/logout">Cerrar sesión</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Asunto</th>
+                <th>Mensaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% mensajes.forEach(mensaje=> { %>
+                <tr>
+                    <td>
+                        <%= mensaje.id %>
+                    </td>
+                    <td>
+                        <%= mensaje.nombre %>
+                    </td>
+                    <td>
+                        <%= mensaje.correo %>
+                    </td>
+                    <td>
+                        <%= mensaje.asunto || '' %>
+                    </td>
+                    <td>
+                        <%= mensaje.mensaje %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
